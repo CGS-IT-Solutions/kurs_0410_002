@@ -8,6 +8,10 @@ pipeline {
                      description: 'If checked downstream pipeline is also',
                     name: 'build_downstream'
         )
+        booleanParam(defaultValue: false,
+                     description: 'Do unit test',
+                    name: 'do_unit_tests'
+        )
         string(name: 'STATEMENT',
             defaultValue: 'Hello World', description: 'What should I say?'
         )
