@@ -1,19 +1,17 @@
-
-
 pipeline {
     agent any
 
     parameters {
         booleanParam(defaultValue: false,
-                     description: 'If checked downstream pipeline is also',
-                    name: 'build_downstream'
+                description: 'If checked downstream pipeline is also',
+                name: 'build_downstream'
         )
         booleanParam(defaultValue: false,
-                     description: 'Do unit test',
-                    name: 'do_unit_tests'
+                description: 'Do unit test',
+                name: 'do_unit_tests'
         )
         string(name: 'STATEMENT',
-            defaultValue: 'Hello World', description: 'What should I say?'
+                defaultValue: 'Hello World', description: 'What should I say?'
         )
     }
 
@@ -44,7 +42,7 @@ pipeline {
         stage('Build and Unit Test') {
 
             when {
-                expression { ${params.do_unit_tests} == true}
+                expression { $ { params.do_unit_tests } == true }
             }
             steps {
                 echo "Build and Unit Test"
@@ -59,7 +57,7 @@ pipeline {
 
         stage('Build Downstream Jobs') {
             when {
-                expression { ${params.build_downstream} == true}
+                expression { $ { params.build_downstream } == true }
             }
             steps {
                 echo "build downstream jobs"
