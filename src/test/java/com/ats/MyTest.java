@@ -30,7 +30,7 @@ public class MyTest {
     void sum() {
 
         int i = MyLib.sum(5,5) ;
-        assertEquals(11,i);
+        assertEquals(10,i);
     }
 
 
