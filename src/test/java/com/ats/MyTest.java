@@ -1,12 +1,22 @@
 package com.ats;
 
+import com.ats.MyLib;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MyLibTest {
+public class MyTest {
+
+
+
+
 
     @BeforeEach
     void setUp() {
@@ -20,6 +30,9 @@ class MyLibTest {
     void sum() {
 
         int i = MyLib.sum(5,5) ;
-        assertEquals(10,i);
+        assertEquals(11,i);
     }
+
+
+
 }
