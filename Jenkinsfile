@@ -38,6 +38,10 @@ pipeline {
         }
 
         stage('Build and Unit Test') {
+
+            when {
+                expression { ${params.do_unit_tests} == true}
+            }
             steps {
                 echo "Build and Unit Test"
                 sh "mvn -B -nsu clean install"
