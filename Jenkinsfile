@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Introduction and Pre Checks') {
             steps {
-                echo 'This is a minimal pipeline.'
+                echo 'This is a minimal pipeline FROM TEST RELEASE.'
                 script {
                     sh 'df -h'
                     sh 'java -version'
