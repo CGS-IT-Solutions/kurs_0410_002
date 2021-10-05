@@ -26,6 +26,18 @@ pipeline {
             }
         }
 
+        stage('Build and Unit Test') {
+            steps {
+                echo "Build and Unit Test"
+                sh "mvn -B -nsu clean install"
+            }
+            post {
+                always {
+                    junit "**/surefire-reports/*.xml"
+                }
+            }
+        }
+
     }
     post {
         failure {
